@@ -48,6 +48,9 @@
     <Reference Include="MySql.Data.Entity.EF6, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.Entity.6.8.8\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
     </Reference>
+    <Reference Include="Saritasa.Tools.Domain, Version=0.3.0.0, Culture=neutral, PublicKeyToken=4f360dc0155dcceb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Saritasa.Tools.Domain.0.3.0\lib\net40\Saritasa.Tools.Domain.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />

@@ -8,6 +8,7 @@ namespace TransportManager.DataAccess.Migrations
     using TransportManager.DataAccess.Models;
     using TransportManager.DataAccess.Enums;
 
+
     internal sealed class Configuration : DbMigrationsConfiguration<TransportManager.DataAccess.TransportManagerContext>
     {
         public Configuration()
