@@ -42,11 +42,5 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TransportManager.DataAccess\TransportManager.DataAccess.csproj">
-      <Project>{5cf750bb-bb76-4bb4-a00c-bc5373d32865}</Project>
-      <Name>TransportManager.DataAccess</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

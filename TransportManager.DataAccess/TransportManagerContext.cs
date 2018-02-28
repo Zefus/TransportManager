@@ -7,6 +7,7 @@ using System.Data.Entity;
 using MySql.Data.Entity;
 using TransportManager.DataAccess.Models;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.ComponentModel.Composition;
 
 namespace TransportManager.DataAccess
 {
