@@ -10,20 +10,16 @@ namespace TransportManager.DataAccess.Infrastructure.Interfaces
 {
     public interface IRepository<TEntity> where TEntity : class
     {
-        Task<IEnumerable<TEntity>> FindAsync(
+        Task<TEntity> FindAsync(
             CancellationToken cancellationToken = default(CancellationToken),
             params object[] keyValues);
 
-        Task<TEntity> GetAsync(
+        Task<IEnumerable<TEntity>> GetAsync(
             Expression<Func<TEntity, bool>> predicate,
-            CancellationToken cancellationToken = default(CancellationToken));
-
-        Task<TEntity> GetAsync(
-            Expression<Func<TEntity, bool>> predicate,
-            CancellationToken cancellationToken = default(CancellationToken)
+            CancellationToken cancellationToken = default(CancellationToken),
             params Expression<Func<TEntity, object>>[] includes);
 
-        Task<TEntity> GetAllAsync(
+        Task<IEnumerable<TEntity>> GetAllAsync(
             CancellationToken cancellationToken = default(CancellationToken));
 
         Task AddAsync(TEntity entity, CancellationToken cancellationToken = default(CancellationToken));
