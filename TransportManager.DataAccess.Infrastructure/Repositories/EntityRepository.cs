@@ -12,18 +12,18 @@ using TransportManager.DataAccess.Infrastructure.Helpers;
 
 namespace TransportManager.DataAccess.Infrastructure.Repositories
 {
-    [Export(typeof(IRepository<>))]
+    [Export(typeof(IEntityRepository<>))]
     [PartCreationPolicy(CreationPolicy.NonShared)]
-    public class EntityRepository<TEntity> : IRepository<TEntity>
+    public class EntityRepository<TEntity> : IEntityRepository<TEntity>
         where TEntity : class
     {
         private DbContext _dbContext { get; }
 
         public DbSet<TEntity> Set { get; }
 
-        public EntityRepository()
+        public EntityRepository(DbContext context)
         {
-            _dbContext = new TransportManagerContext();
+            _dbContext = context;
             Set = _dbContext.Set<TEntity>();
         }
 

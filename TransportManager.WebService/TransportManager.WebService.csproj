@@ -197,6 +197,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -257,7 +258,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Converters\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Entity\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -271,6 +274,16 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TransportManager.DataAccess.Infrastructure\TransportManager.DataAccess.Infrastructure.csproj">
+      <Project>{dd503fce-8e41-41df-a881-715d9e00aff0}</Project>
+      <Name>TransportManager.DataAccess.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransportManager.DataAccess\TransportManager.DataAccess.csproj">
+      <Project>{5cf750bb-bb76-4bb4-a00c-bc5373d32865}</Project>
+      <Name>TransportManager.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TransportManager.DataAccess.Infrastructure.Interfaces
 {
-    public interface IRepository<TEntity> where TEntity : class
+    public interface IEntityRepository<TEntity> where TEntity : class
     {
         Task<TEntity> FindAsync(
             CancellationToken cancellationToken = default(CancellationToken),
