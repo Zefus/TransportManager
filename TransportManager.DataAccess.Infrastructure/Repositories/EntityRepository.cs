@@ -17,7 +17,7 @@ namespace TransportManager.DataAccess.Infrastructure.Repositories
     public class EntityRepository<TEntity> : IEntityRepository<TEntity>
         where TEntity : class
     {
-        private DbContext _dbContext { get; }
+        private DbContext _dbContext;
 
         public DbSet<TEntity> Set { get; }
 
@@ -28,7 +28,7 @@ namespace TransportManager.DataAccess.Infrastructure.Repositories
         }
 
         public async Task<TEntity> FindAsync(
-            CancellationToken cancellationToken, 
+            CancellationToken cancellationToken,
             params object[] keyValues)
         {
             var entity = await Set.FindAsync(cancellationToken, keyValues).ConfigureAwait(false);
@@ -59,9 +59,9 @@ namespace TransportManager.DataAccess.Infrastructure.Repositories
             return InternalHelper.CompletedTask;
         }
 
-        public Task AddRangeAsync(IEnumerable<TEntity> entity, CancellationToken cancellationToken)
+        public Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken)
         {
-            Set.AddRange(entity);
+            Set.AddRange(entities);
             return InternalHelper.CompletedTask;
         }
 
@@ -71,9 +71,9 @@ namespace TransportManager.DataAccess.Infrastructure.Repositories
             return InternalHelper.CompletedTask;
         }
 
-        public Task RemoveRangeAsync(IEnumerable<TEntity> entity, CancellationToken cancellationToken)
+        public Task RemoveRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken)
         {
-            Set.RemoveRange(entity);
+            Set.RemoveRange(entities);
             return InternalHelper.CompletedTask;
         }
     }

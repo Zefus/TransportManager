@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.10
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportManager.DataAccess", "TransportManager.DataAccess\TransportManager.DataAccess.csproj", "{5CF750BB-BB76-4BB4-A00C-BC5373D32865}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportManager.WebService", "TransportManager.WebService\TransportManager.WebService.csproj", "{7CA121EF-5324-4D40-8123-8AA6B01EB84F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportManager.DataAccess.Infrastructure", "TransportManager.DataAccess.Infrastructure\TransportManager.DataAccess.Infrastructure.csproj", "{DD503FCE-8E41-41DF-A881-715D9E00AFF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportManger.ConsoleTerminal", "TransportManger.ConsoleTerminal\TransportManger.ConsoleTerminal.csproj", "{DF6650E2-826D-499E-B292-485CB9197F9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportManager.DataAccess.Operations", "TransportManager.DataAccess.Operations\TransportManager.DataAccess.Operations.csproj", "{186D1D96-208A-4C54-B450-843888FA4C7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{DD503FCE-8E41-41DF-A881-715D9E00AFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD503FCE-8E41-41DF-A881-715D9E00AFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD503FCE-8E41-41DF-A881-715D9E00AFF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF6650E2-826D-499E-B292-485CB9197F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF6650E2-826D-499E-B292-485CB9197F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF6650E2-826D-499E-B292-485CB9197F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF6650E2-826D-499E-B292-485CB9197F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{186D1D96-208A-4C54-B450-843888FA4C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{186D1D96-208A-4C54-B450-843888FA4C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{186D1D96-208A-4C54-B450-843888FA4C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{186D1D96-208A-4C54-B450-843888FA4C7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

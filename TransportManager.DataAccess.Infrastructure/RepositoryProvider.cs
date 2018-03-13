@@ -11,10 +11,9 @@ using TransportManager.DataAccess.Infrastructure.Repositories;
 
 namespace TransportManager.DataAccess.Infrastructure
 {
-    [Export(typeof(IRepositoryProvider<>))]
+    [Export(typeof(IRepositoryProvider))]
     [PartCreationPolicy(CreationPolicy.NonShared)]
-    public class RepositoryProvider<TEntity> : IRepositoryProvider<TEntity>
-        where TEntity : class
+    public class RepositoryProvider : IRepositoryProvider
     {
         private DbContext _dbContext;
         private bool disposed = false;
@@ -24,15 +23,11 @@ namespace TransportManager.DataAccess.Infrastructure
             _dbContext = new TransportManagerContext();
         }
 
-        public IEntityRepository<TEntity> GetRepository()
+        public IEntityRepository<TEntity> GetRepository<TEntity>() where TEntity : class
         {
-            if (!disposed)
-            {
-                var repository = new EntityRepository<TEntity>(_dbContext);
-                return repository;
-            }
+            var repository = new EntityRepository<TEntity>(_dbContext);
 
-            throw new ObjectDisposedException(GetType().Name);
+            return repository;
         }
 
         public virtual int SaveChanges()
@@ -61,7 +56,6 @@ namespace TransportManager.DataAccess.Infrastructure
             }
         }
 
-        /// <inheritdoc />
         public void Dispose()
         {
             Dispose(true);

@@ -7,10 +7,9 @@ using TransportManager.DataAccess.Infrastructure.Interfaces;
 
 namespace TransportManager.DataAccess.Infrastructure
 {
-    public interface IRepositoryProvider<TEntity> : IDisposable
-        where TEntity : class
+    public interface IRepositoryProvider : IDisposable
     {
-        IEntityRepository<TEntity> GetRepository();
+        IEntityRepository<TEntity> GetRepository<TEntity>() where TEntity : class;
         int SaveChanges();
         Task<int> SaveChangesAsync();
     }
