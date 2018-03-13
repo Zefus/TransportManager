@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.ComponentModel.Composition;
+using Microsoft.Mef.CommonServiceLocator;
+using Microsoft.Practices.ServiceLocation;
 using TransportManager.DataAccess.Infrastructure;
 using TransportManager.DataAccess.Infrastructure.Interfaces;
 using TransportManager.DataAccess.Infrastructure.Repositories;
@@ -18,6 +20,9 @@ namespace TransportManager.DataAccess.Infrastructure
         private DbContext _dbContext;
         private bool disposed = false;
 
+        [Import(RequiredCreationPolicy = CreationPolicy.Shared)]
+        protected virtual IServiceLocator ServiceLocator { get; set; }
+
         public RepositoryProvider()
         {
             _dbContext = new TransportManagerContext();
@@ -25,9 +30,14 @@ namespace TransportManager.DataAccess.Infrastructure
 
         public IEntityRepository<TEntity> GetRepository<TEntity>() where TEntity : class
         {
-            var repository = new EntityRepository<TEntity>(_dbContext);
+            if (!disposed)
+            {
+                var repository = new EntityRepository<TEntity>(_dbContext);
 
-            return repository;
+                return repository;
+            }
+
+            return ServiceLocator.GetInstance<IEntityRepository<TEntity>>();
         }
 
         public virtual int SaveChanges()

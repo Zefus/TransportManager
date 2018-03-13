@@ -40,9 +40,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Desktop\DMD\DMDtest\MitaBase\Mita.DataAccess\bin\Debug\Mita.DataAccess.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -58,11 +55,13 @@
     <Compile Include="IFindUserViewModelOperation.cs" />
     <Compile Include="IGetAllUserViewModelOperation.cs" />
     <Compile Include="IGetUserViewModelOperation.cs" />
+    <Compile Include="IRemoveUserOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserOperations\CreateUserOperation.cs" />
     <Compile Include="UserOperations\FindUserViewModelOperation.cs" />
     <Compile Include="UserOperations\GetAllUserViewModelOperation.cs" />
     <Compile Include="UserOperations\GetUserViewModelOperation.cs" />
+    <Compile Include="UserOperations\RemoveUserOperation.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

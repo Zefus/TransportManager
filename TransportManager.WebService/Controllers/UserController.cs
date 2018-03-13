@@ -24,6 +24,8 @@ namespace TransportManager.WebService.Controllers
         private IFindUserViewModelOperation FindUserViewModelOperation { get; set; }
         [Import]
         private ICreateUserOperation CreateUserOperation { get; set; }
+        [Import]
+        private IRemoveUserOperation RemoveUserOperation { get; set; }
 
         [HttpGet]
         public async Task<UserViewModel> Find(params object[] keyValues)
@@ -51,6 +53,14 @@ namespace TransportManager.WebService.Controllers
                 return false;
 
             return await CreateUserOperation.ExecuteAsync(user);
+        }
+
+        public async Task<bool> Delete([FromBody]User user)
+        {
+            if (user == null)
+                return false;
+
+            return await RemoveUserOperation.ExecuteAsync(user);
         }
     }
 }
