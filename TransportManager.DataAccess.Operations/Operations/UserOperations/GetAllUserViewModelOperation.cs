@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.Composition;
 using TransportManager.DataAccess.Infrastructure;
-using TransportManager.DataAccess.Operations.UserOperationsInterfaces;
+using TransportManager.DataAccess.Operations.Interfaces.UserInterfaces;
 using TransportManager.DataAccess.Operations.ViewModels;
 using TransportManager.DataAccess.Models;
 
-namespace TransportManager.DataAccess.Operations.UserOperations
+namespace TransportManager.DataAccess.Operations.Operations.UserOperations
 {
     [Export(typeof(IGetAllUserViewModelOperation))]
     [PartCreationPolicy(CreationPolicy.NonShared)]

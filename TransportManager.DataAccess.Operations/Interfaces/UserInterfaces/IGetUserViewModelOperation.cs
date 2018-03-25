@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using TransportManager.DataAccess.Operations.ViewModels;
 using TransportManager.DataAccess.Models;
 
-namespace TransportManager.DataAccess.Operations.UserOperationsInterfaces
+namespace TransportManager.DataAccess.Operations.Interfaces.UserInterfaces
 {
     public interface IGetUserViewModelOperation
     {

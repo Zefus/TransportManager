@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.ComponentModel.Composition;
 using TransportManager.DataAccess.Models;
-using TransportManager.DataAccess.Operations.UserOperationsInterfaces;
+using TransportManager.DataAccess.Operations.Interfaces.UserInterfaces;
 using TransportManager.DataAccess.Operations.ViewModels;
 
 namespace TransportManager.WebService.Controllers

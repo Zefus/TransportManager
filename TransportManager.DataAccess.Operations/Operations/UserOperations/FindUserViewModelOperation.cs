@@ -6,11 +6,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.ComponentModel.Composition;
 using TransportManager.DataAccess.Operations.ViewModels;
-using TransportManager.DataAccess.Operations.UserOperationsInterfaces;
+using TransportManager.DataAccess.Operations.Interfaces.UserInterfaces;
 using TransportManager.DataAccess.Models;
 using TransportManager.DataAccess.Infrastructure;
 
-namespace TransportManager.DataAccess.Operations
+namespace TransportManager.DataAccess.Operations.Operations.UserOperations
 {
     [Export(typeof(IFindUserViewModelOperation))]
     [PartCreationPolicy(CreationPolicy.NonShared)]

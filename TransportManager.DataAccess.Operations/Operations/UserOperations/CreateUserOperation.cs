@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using System.ComponentModel.Composition;
 using TransportManager.DataAccess.Models;
 using TransportManager.DataAccess.Infrastructure;
-using TransportManager.DataAccess.Operations.UserOperationsInterfaces;
+using TransportManager.DataAccess.Operations.Interfaces.UserInterfaces;
 
-namespace TransportManager.DataAccess.Operations.UserOperations
+namespace TransportManager.DataAccess.Operations.Operations.UserOperations
 {
     [Export(typeof(ICreateUserOperation))]
     [PartCreationPolicy(CreationPolicy.NonShared)]

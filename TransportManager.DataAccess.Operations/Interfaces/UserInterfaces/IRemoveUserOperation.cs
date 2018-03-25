@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TransportManager.DataAccess.Operations.UserOperationsInterfaces
+namespace TransportManager.DataAccess.Operations.Interfaces.UserInterfaces
 {
     public interface IRemoveUserOperation
     {

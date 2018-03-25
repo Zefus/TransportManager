@@ -9,10 +9,10 @@ using TransportManager.DataAccess.Operations.ViewModels;
 using TransportManager.DataAccess.Infrastructure;
 using TransportManager.DataAccess.Models;
 
-namespace TransportManager.DataAccess.Operations
+namespace TransportManager.DataAccess.Operations.Operations.UserOperations
 {
-    //public class GetUserViewModelOperation : IGetUserViewModelOperation
-    //{
+    public class GetUserViewModelOperation
+    {
     //    [Import]
     //    private IRepositoryProvider _repositoryProvider { get; set; }
 
@@ -24,5 +24,5 @@ namespace TransportManager.DataAccess.Operations
     //            .GetRepository<User>()
     //            .GetAsync();
     //    }
-    //}
+    }
 }
