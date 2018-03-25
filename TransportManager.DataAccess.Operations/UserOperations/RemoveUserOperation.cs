@@ -6,11 +6,13 @@ using System.ComponentModel.Composition;
 using System.Threading.Tasks;
 using System.Threading;
 using TransportManager.DataAccess.Infrastructure;
-using TransportManager.DataAccess.Infrastructure.Interfaces;
+using TransportManager.DataAccess.Operations.UserOperationsInterfaces;
 using TransportManager.DataAccess.Models;
 
 namespace TransportManager.DataAccess.Operations.UserOperations
 {
+    [Export(typeof(IRemoveUserOperation))]
+    [PartCreationPolicy(CreationPolicy.NonShared)]
     public class RemoveUserOperation : IRemoveUserOperation
     {
         [Import]

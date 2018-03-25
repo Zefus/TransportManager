@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using TransportManager.DataAccess.Operations.ViewModels;
 
-namespace TransportManager.DataAccess.Operations
+namespace TransportManager.DataAccess.Operations.UserOperationsInterfaces
 {
-    public interface IGetAllUserViewModelOperation
+    public interface IFindUserViewModelOperation
     {
-        Task<IEnumerable<UserViewModel>> ExecuteAsync();
+        Task<UserViewModel> ExecuteAsync(params object[] keyValues);
     }
 }

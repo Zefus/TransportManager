@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using System.ComponentModel.Composition;
 using TransportManager.DataAccess.Models;
 using TransportManager.DataAccess.Infrastructure;
+using TransportManager.DataAccess.Operations.UserOperationsInterfaces;
 
 namespace TransportManager.DataAccess.Operations.UserOperations
 {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.Composition;
 using TransportManager.DataAccess.Infrastructure;
-using TransportManager.DataAccess.Operations;
+using TransportManager.DataAccess.Operations.UserOperationsInterfaces;
 using TransportManager.DataAccess.Operations.ViewModels;
 using TransportManager.DataAccess.Models;
 

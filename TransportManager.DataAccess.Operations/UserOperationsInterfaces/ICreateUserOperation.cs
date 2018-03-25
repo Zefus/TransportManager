@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TransportManager.DataAccess.Models;
 
-namespace TransportManager.DataAccess.Operations
+namespace TransportManager.DataAccess.Operations.UserOperationsInterfaces
 {
     public interface ICreateUserOperation
     {

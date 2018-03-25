@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.ComponentModel.Composition;
 using TransportManager.DataAccess.Models;
-using TransportManager.DataAccess.Operations;
+using TransportManager.DataAccess.Operations.UserOperationsInterfaces;
 using TransportManager.DataAccess.Operations.ViewModels;
-using TransportManager.DataAccess.Infrastructure;
 
 namespace TransportManager.WebService.Controllers
 {
@@ -55,12 +54,12 @@ namespace TransportManager.WebService.Controllers
             return await CreateUserOperation.ExecuteAsync(user);
         }
 
-        public async Task<bool> Delete([FromBody]User user)
-        {
-            if (user == null)
+        [HttpPost]
+        public async Task<bool> Delete([FromBody]object id)
+        {    if (id == null)
                 return false;
 
-            return await RemoveUserOperation.ExecuteAsync(user);
+            return await RemoveUserOperation.ExecuteAsync(id);
         }
     }
 }
