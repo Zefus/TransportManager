@@ -23,6 +23,13 @@ namespace TransportManager.DataAccess.Migrations
                 new User {FirstName = "111", LastName = "222", MiddleName = "333", Password = "qwerty", Email = "qqq", Gender = Gender.Female, LastVisit = DateTime.Now, Login = "zzz", Phone = "5555"}
             };
             users.ForEach(u => context.Users.AddOrUpdate(u));
+
+            List<Driver> drivers = new List<Driver>
+            {
+                new Driver {FirstName = "aaron", LastName = "acosta", Phone = "11111111", Shift = "12212"}
+            };
+
+            drivers.ForEach(d => context.Drivers.AddOrUpdate(d));
         }
     }
 }
