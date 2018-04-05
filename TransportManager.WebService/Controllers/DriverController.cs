@@ -22,6 +22,8 @@ namespace TransportManager.WebService.Controllers
         private IGetAllDriverViewModelOperation GetAllDriverViewModelOperation { get; set; }
         [Import]
         private ICreateDriverOperation CreateDriverOperation { get; set; }
+        [Import]
+        private IRemoveDriverOperation RemoveDriverOperation { get; set; }
 
         [HttpGet]
         public async Task<DriverViewModel> Find(params object[] keyValues)
@@ -47,6 +49,13 @@ namespace TransportManager.WebService.Controllers
             return await CreateDriverOperation.ExecuteAsync(driver);
         }
 
+        [HttpPost]
+        public async Task<bool> Delete([FromBody]object id)
+        {
+            if (id == null)
+                return false;
 
+            return await RemoveDriverOperation.ExecuteAsync(id);
+        }
     }
 }

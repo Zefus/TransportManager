@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\DriverInterfaces\ICreateDriverOperation.cs" />
     <Compile Include="Interfaces\DriverInterfaces\IFindDriverViewModelOperation.cs" />
     <Compile Include="Interfaces\DriverInterfaces\IGetAllDriverViewModelOperation.cs" />
+    <Compile Include="Interfaces\DriverInterfaces\IRemoveDriverOperation.cs" />
     <Compile Include="Interfaces\UserInterfaces\ICreateUserOperation.cs" />
     <Compile Include="Interfaces\UserInterfaces\IFindUserViewModelOperation.cs" />
     <Compile Include="Interfaces\UserInterfaces\IGetAllUserViewModelOperation.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Operations\DriverOperations\CreateDriverOperation.cs" />
     <Compile Include="Operations\DriverOperations\FindDriverViewModelOperation.cs" />
     <Compile Include="Operations\DriverOperations\GetAllDriverViewModelOperation.cs" />
+    <Compile Include="Operations\DriverOperations\RemoveDriverOperation.cs" />
     <Compile Include="Operations\UserOperations\CreateUserOperation.cs" />
     <Compile Include="Operations\UserOperations\FindUserViewModelOperation.cs" />
     <Compile Include="Operations\UserOperations\GetAllUserViewModelOperation.cs" />
