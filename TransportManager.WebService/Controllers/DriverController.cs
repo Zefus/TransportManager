@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.ComponentModel.Composition;
 using TransportManager.DataAccess.Models;
+using TransportManager.DataAccess.Operations.ViewModels.DriverViewModels;
 using TransportManager.DataAccess.Operations.Interfaces.DriverInterfaces;
 
 namespace TransportManager.WebService.Controllers
@@ -16,7 +17,26 @@ namespace TransportManager.WebService.Controllers
     public class DriverController : ApiController
     {
         [Import]
+        private IFindDriverViewModelOperation FindDriverViewModelOperation { get; set; }
+        [Import]
+        private IGetAllDriverViewModelOperation GetAllDriverViewModelOperation { get; set; }
+        [Import]
         private ICreateDriverOperation CreateDriverOperation { get; set; }
+
+        [HttpGet]
+        public async Task<DriverViewModel> Find(params object[] keyValues)
+        {
+            var driver = await FindDriverViewModelOperation.ExecuteAsync(keyValues);
+            return driver;
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<DriverViewModel>> GetAll()
+        {
+            var drivers = await GetAllDriverViewModelOperation.ExecuteAsync();
+
+            return drivers;
+        }
 
         [HttpPost]
         public async Task<bool> Create([FromBody]Driver driver)
@@ -26,5 +46,7 @@ namespace TransportManager.WebService.Controllers
 
             return await CreateDriverOperation.ExecuteAsync(driver);
         }
+
+
     }
 }

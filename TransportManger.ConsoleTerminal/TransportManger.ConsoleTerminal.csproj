@@ -58,6 +58,10 @@
       <Project>{dd503fce-8e41-41df-a881-715d9e00aff0}</Project>
       <Name>TransportManager.DataAccess.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TransportManager.DataAccess.Operations\TransportManager.DataAccess.Operations.csproj">
+      <Project>{186d1d96-208a-4c54-b450-843888fa4c7a}</Project>
+      <Name>TransportManager.DataAccess.Operations</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TransportManager.DataAccess\TransportManager.DataAccess.csproj">
       <Project>{5cf750bb-bb76-4bb4-a00c-bc5373d32865}</Project>
       <Name>TransportManager.DataAccess</Name>

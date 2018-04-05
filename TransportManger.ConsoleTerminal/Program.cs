@@ -9,6 +9,7 @@ using TransportManager.DataAccess.Infrastructure;
 using TransportManager.DataAccess;
 using TransportManager.DataAccess.Models;
 using TransportManager.DataAccess.Infrastructure.Interfaces;
+using TransportManager.DataAccess.Operations.Interfaces.UserInterfaces;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 
@@ -18,6 +19,8 @@ namespace TransportManger.ConsoleTerminal
     {
         [Import]
         public IRepositoryProvider repositoryProvider { get; set; }
+        [Import]
+        public IGetAllUserViewModelOperation GetAllUserViewModelOperation { get; set; }
 
         private Program()
         {
@@ -41,6 +44,7 @@ namespace TransportManger.ConsoleTerminal
             Program p = new Program();
             //var repository = p.repositoryProvider.GetRepository();
             //var users = repository.GetAllAsync().Result;
+            var drivers = p.GetAllUserViewModelOperation.ExecuteAsync();
         }
     }
 }

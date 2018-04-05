@@ -52,18 +52,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\DriverInterfaces\ICreateDriverOperation.cs" />
+    <Compile Include="Interfaces\DriverInterfaces\IFindDriverViewModelOperation.cs" />
+    <Compile Include="Interfaces\DriverInterfaces\IGetAllDriverViewModelOperation.cs" />
     <Compile Include="Interfaces\UserInterfaces\ICreateUserOperation.cs" />
     <Compile Include="Interfaces\UserInterfaces\IFindUserViewModelOperation.cs" />
     <Compile Include="Interfaces\UserInterfaces\IGetAllUserViewModelOperation.cs" />
     <Compile Include="Interfaces\UserInterfaces\IGetUserViewModelOperation.cs" />
     <Compile Include="Interfaces\UserInterfaces\IRemoveUserOperation.cs" />
     <Compile Include="Operations\DriverOperations\CreateDriverOperation.cs" />
+    <Compile Include="Operations\DriverOperations\FindDriverViewModelOperation.cs" />
+    <Compile Include="Operations\DriverOperations\GetAllDriverViewModelOperation.cs" />
     <Compile Include="Operations\UserOperations\CreateUserOperation.cs" />
     <Compile Include="Operations\UserOperations\FindUserViewModelOperation.cs" />
     <Compile Include="Operations\UserOperations\GetAllUserViewModelOperation.cs" />
     <Compile Include="Operations\UserOperations\GetUserViewModelOperation.cs" />
     <Compile Include="Operations\UserOperations\RemoveUserOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\DriverViewModels\DriverViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
