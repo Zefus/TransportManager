@@ -41,10 +41,14 @@ namespace TransportManger.ConsoleTerminal
 
         static void Main(string[] args)
         {
-            Program p = new Program();
+            //Program p = new Program();
             //var repository = p.repositoryProvider.GetRepository();
             //var users = repository.GetAllAsync().Result;
-            var drivers = p.GetAllUserViewModelOperation.ExecuteAsync();
+            //var drivers = p.GetAllUserViewModelOperation.ExecuteAsync();
+
+            string str = "11112222";
+
+            string[] str1 = str.Split('+');
         }
     }
 }

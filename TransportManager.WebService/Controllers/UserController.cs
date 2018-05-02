@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.ComponentModel.Composition;
 using TransportManager.DataAccess.Models;
+using TransportManager.WebService.Converters;
 using TransportManager.DataAccess.Operations.Interfaces.UserInterfaces;
 using TransportManager.DataAccess.Operations.ViewModels;
 
@@ -18,13 +19,15 @@ namespace TransportManager.WebService.Controllers
     public class UserController : ApiController
     {
         [Import]
-        private IGetAllUserViewModelOperation GetGetAllUserViewModelOperation { get; set; }
+        private IGetAllUserViewModelOperation GetAllUserViewModelOperation { get; set; }
         [Import]
         private IFindUserViewModelOperation FindUserViewModelOperation { get; set; }
         [Import]
         private ICreateUserOperation CreateUserOperation { get; set; }
         [Import]
         private IRemoveUserOperation RemoveUserOperation { get; set; }
+        [Import]
+        private IGetUserViewModelOperation GetUserViewModelOperation { get; set; }
 
         [HttpGet]
         public async Task<UserViewModel> Find(params object[] keyValues)
@@ -36,14 +39,17 @@ namespace TransportManager.WebService.Controllers
         [HttpGet]
         public async Task<IEnumerable<UserViewModel>> GetAll()
         {
-            var users = await GetGetAllUserViewModelOperation.ExecuteAsync();
+            var users = await GetAllUserViewModelOperation.ExecuteAsync();
             return users;
         }
 
-        //public async Task<IEnumerable<User>> Get()
-        //{
-            
-        //}
+        [HttpGet]
+        public async Task<IEnumerable<UserViewModel>> Get(string keyValues)
+        {
+            var lymbdaExpression = LambdaConverter.Convert<User>(keyValues);
+            var users = await GetUserViewModelOperation.ExecuteAsync(lymbdaExpression);
+            return users;
+        }
 
         [HttpPost]
         public async Task<bool> Create([FromBody]User user)
@@ -55,11 +61,11 @@ namespace TransportManager.WebService.Controllers
         }
 
         [HttpPost]
-        public async Task<bool> Delete([FromBody]object id)
-        {    if (id == null)
+        public async Task<bool> Delete([FromBody]object keyValues)
+        {    if (keyValues == null)
                 return false;
 
-            return await RemoveUserOperation.ExecuteAsync(id);
+            return await RemoveUserOperation.ExecuteAsync(keyValues);
         }
     }
 }

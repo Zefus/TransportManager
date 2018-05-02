@@ -20,10 +20,10 @@ namespace TransportManager.WebService
 
             config.Routes.MapHttpRoute(
                 name: "GetById",
-                routeTemplate: "api/{controller}/{action}/{id}",
+                routeTemplate: "api/{controller}/{action}/{keyValues}",
                 defaults: new
                 {
-                    id = RouteParameter.Optional,
+                    keyValues = RouteParameter.Optional,
                 }
             );
         }

@@ -40,8 +40,6 @@ namespace TransportManager.WebService.App_Start
             {
                 var instance = _serviceLocator.GetInstance(serviceType);
                 return instance;
-                //var name = AttributedModelServices.GetContractName(serviceType);
-                //var export = _container.GetExportedValueOrDefault<object>(name);
             }
             catch (Exception exc)
             {

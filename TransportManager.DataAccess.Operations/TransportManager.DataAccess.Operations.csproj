@@ -38,7 +38,7 @@
     </Reference>
     <Reference Include="Mita.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\DMD\DMDtest\MitaBase\Mita.DataAccess\bin\Debug\Mita.DataAccess.dll</HintPath>
+      <HintPath>..\TransportManager.DataAccess\bin\Debug\Mita.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\DriverInterfaces\ICreateDriverOperation.cs" />
     <Compile Include="Interfaces\DriverInterfaces\IFindDriverViewModelOperation.cs" />
     <Compile Include="Interfaces\DriverInterfaces\IGetAllDriverViewModelOperation.cs" />
+    <Compile Include="Interfaces\DriverInterfaces\IGetDriverViewModelOperation.cs" />
     <Compile Include="Interfaces\DriverInterfaces\IRemoveDriverOperation.cs" />
     <Compile Include="Interfaces\UserInterfaces\ICreateUserOperation.cs" />
     <Compile Include="Interfaces\UserInterfaces\IFindUserViewModelOperation.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Operations\DriverOperations\CreateDriverOperation.cs" />
     <Compile Include="Operations\DriverOperations\FindDriverViewModelOperation.cs" />
     <Compile Include="Operations\DriverOperations\GetAllDriverViewModelOperation.cs" />
+    <Compile Include="Operations\DriverOperations\GetDriverViewModelOperation.cs" />
     <Compile Include="Operations\DriverOperations\RemoveDriverOperation.cs" />
     <Compile Include="Operations\UserOperations\CreateUserOperation.cs" />
     <Compile Include="Operations\UserOperations\FindUserViewModelOperation.cs" />

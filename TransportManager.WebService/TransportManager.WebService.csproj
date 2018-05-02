@@ -58,7 +58,7 @@
     </Reference>
     <Reference Include="Mita.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\DMD\DMDtest\MitaBase\Mita.DataAccess\bin\Debug\Mita.DataAccess.dll</HintPath>
+      <HintPath>bin\Mita.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -207,6 +207,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\DriverController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Converters\LambdaConverter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -266,7 +267,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Formatters\" />
     <Folder Include="Views\Entity\" />
   </ItemGroup>
   <ItemGroup>
