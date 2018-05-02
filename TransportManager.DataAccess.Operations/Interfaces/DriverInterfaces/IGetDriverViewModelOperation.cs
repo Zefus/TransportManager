@@ -12,7 +12,7 @@ namespace TransportManager.DataAccess.Operations.Interfaces.DriverInterfaces
 {
     public interface IGetDriverViewModelOperation
     {
-        IEnumerable<DriverViewModel> ExecuteAsync(Expression<Func<Driver, bool>> predicate,
-            params Expression<Func<User, object>>[] includes);
+        Task<IEnumerable<DriverViewModel>> ExecuteAsync(Expression<Func<Driver, bool>> predicate,
+            params Expression<Func<Driver, object>>[] includes);
     }
 }

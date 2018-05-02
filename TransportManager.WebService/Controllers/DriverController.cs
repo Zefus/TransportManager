@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.ComponentModel.Composition;
+using TransportManager.WebService.Converters;
 using TransportManager.DataAccess.Models;
 using TransportManager.DataAccess.Operations.ViewModels.DriverViewModels;
 using TransportManager.DataAccess.Operations.Interfaces.DriverInterfaces;
@@ -24,6 +25,8 @@ namespace TransportManager.WebService.Controllers
         private ICreateDriverOperation CreateDriverOperation { get; set; }
         [Import]
         private IRemoveDriverOperation RemoveDriverOperation { get; set; }
+        [Import]
+        private IGetDriverViewModelOperation GetDriverViewModelOperation { get; set; }
 
         [HttpGet]
         public async Task<DriverViewModel> Find(params object[] keyValues)
@@ -37,6 +40,14 @@ namespace TransportManager.WebService.Controllers
         {
             var drivers = await GetAllDriverViewModelOperation.ExecuteAsync();
 
+            return drivers;
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<DriverViewModel>> Get(string keyValues)
+        {
+            var expression = LambdaConverter.Convert<Driver>(keyValues);
+            var drivers = await GetDriverViewModelOperation.ExecuteAsync(expression);
             return drivers;
         }
 
